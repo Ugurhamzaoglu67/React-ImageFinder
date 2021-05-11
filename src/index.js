@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './components/My_app'       // it was called
+import App from './components/app'       // it was called
 
 
 
