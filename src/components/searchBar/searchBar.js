@@ -5,25 +5,21 @@ import './searchBar.css'
 
 class SearchBar extends Component  {
 
-    /*  Second method for bind
-    contructor(props) {   
-        super(props)
+   constructor(props) {
+        super(props);
+
+
         this.state = {
             searchFor:''
         }
-        this.inputChange = this.inputChange.bind(this)    
-    }  
-    */
+
+        this.searchClick = this.searchClick.bind(this)
 
 
+   }
+   
 
-
-
-    state = {
-        searchFor:''
-    }
-
-
+//______________________________ onCHANGE _____________________________
     inputChange (e) {
         
         this.setState({
@@ -31,26 +27,38 @@ class SearchBar extends Component  {
         })
     }
 
-
+ //_____________________________ onCLICK  _____________________________   
+    searchClick(e) {
+        
+        this.props.onsearchClick(this.state.searchFor) //We send it to the app from here
+    }
 
    
     render() {
         return (
 
-            <div className="ui searchBar-container category search">
-                <div className="ui icon input" style={{width:'100%'}}>
-                    <input 
-                    className="prompt" 
-                    type="text" 
-                    placeholder="Search images..." 
-                    onChange={this.inputChange.bind(this)}
-                    />
-                   
-                   
-                    <i className="search icon"></i>
-                </div>
-                <div className="results"></div>
-            </div> 
+                
+            <div className="ui fluid action input searchBar-container">
+            <input 
+                type="text"
+                placeholder="Search image..."
+                onChange={this.inputChange.bind(this)}
+                onKeyPress={(e) => {
+                    if(e.key === 'Enter'){
+                        this.searchClick()
+                    }
+                }}
+             />
+            <button 
+                className="ui  icon teal button"
+                onClick={this.searchClick}
+                >
+                 <i className="search icon"></i>     
+            </button>
+                
+            </div>
+        
+            
         )
     }
 

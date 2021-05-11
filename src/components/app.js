@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
 import SearchBar from './searchBar/searchBar.js'
 import './styleapp.css'
 
 
 
-const App = () => {
-    return (
-        <div className="appContainer" >
-            <SearchBar />
-        </div>
-    )
-}
 
-export default App
+
+class App extends Component {
+
+    onsearchClick(searchFor) {
+        console.log("app: "+searchFor)
+    }
+
+
+    render() {
+        return (
+            <div className="appContainer" >
+                <SearchBar onsearchClick={this.onsearchClick} />
+            </div>
+        )
+    }
+
+
+
+};
+
+export default App;
