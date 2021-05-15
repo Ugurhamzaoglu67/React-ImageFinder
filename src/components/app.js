@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SearchBar from './searchBar/searchBar.js'
 import './styleapp.css'
 import axios from 'axios'
-import ImageList from './images/imageList'
+import ImageList from './imagesComponent/imageList'
 
 
 
@@ -11,7 +11,7 @@ class App extends Component {
 
     state = {
         images : [],
-        amount:15
+        amount:3
     }
 
     selectChange(e) {
@@ -20,7 +20,6 @@ class App extends Component {
             amount:e.target.value
         })
 
-      console.log()
      }
    
  
@@ -47,6 +46,8 @@ class App extends Component {
 
                 <select className="selectStyle" onChange={this.selectChange.bind(this)}>
                
+                    
+                   
                     <option value={3}>3</option>
                     <option value={5}>5</option>
                     <option value={10}>10</option>

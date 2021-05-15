@@ -1,20 +1,20 @@
 import React from 'react'
 import './imagelist.css'
-
+import Image from './imageClassB'
 
 const ImageList  = ({ images }) => {
     
 
     const haveComeImages = images.map((img) => {
-        console.log(img)
+       
         return (
-            <img  src={img.urls.small} alt={img.alt_description} key={img.id} />
+           <Image img={img}  key={img.id}/>
         )
     })
 
     return (
 
-        <div className="imageCss">
+        <div className="imageCss-container">
             {haveComeImages}
 
         </div>

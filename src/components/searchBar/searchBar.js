@@ -12,7 +12,6 @@ class SearchBar extends Component  {
         this.state = {
             searchFor:'',
             
-            
         }
 
         this.searchClick = this.searchClick.bind(this)
