@@ -10,7 +10,9 @@ class SearchBar extends Component  {
 
 
         this.state = {
-            searchFor:''
+            searchFor:'',
+            
+            
         }
 
         this.searchClick = this.searchClick.bind(this)
@@ -31,6 +33,7 @@ class SearchBar extends Component  {
     searchClick(e) {
         
         this.props.onsearchClick(this.state.searchFor) //We send it to the app from here
+       
     }
 
    
@@ -49,6 +52,9 @@ class SearchBar extends Component  {
                     }
                 }}
              />
+
+                
+
             <button 
                 className="ui  icon teal button"
                 onClick={this.searchClick}

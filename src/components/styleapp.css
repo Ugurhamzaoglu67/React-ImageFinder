@@ -3,4 +3,18 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 2.3rem;
+    font-size:1.3rem;
+    
+}
+
+
+.selectStyle {
+    width:100px;
+    padding:.8rem 1rem;
+    margin-left:3rem;
+    text-align: center;
+    background-color:darkblue;
+    color:white;
+    border-radius: 1em;
+    outline: none;
 }
